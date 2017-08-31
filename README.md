@@ -1,2 +1,2 @@
 # Cryptopals
-Solutions for The Matasano Crypto Challenges. <br>
+Solutions for Matasano crypto challenges. <br>
