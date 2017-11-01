@@ -13,8 +13,13 @@ def ctr(c, nounce, key):
     keystream = b''
 
     while len(c)>len(keystream):
+        #QQ = 8x + 8x bytes ->
+        #-> b'\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00'
         keystream += cipher.encrypt(pack('<QQ', nounce ,streamblock))
+        #add one to counter each round
         streamblock +=1
+    
+    #xor keystream with plain or ciphertext
     return Methods.xor(keystream, c)
     
 
