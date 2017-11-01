@@ -24,13 +24,14 @@ def ctr(c, nounce, key):
     
 
 
-c = base64.b64decode("L77na/nrFsKvynd6HzOoG7GHTLXsTVu9qvY/2syLXzhPweyyMTJULu/6/kXX0KSvoOLSFQ==")
-key = b"YELLOW SUBMARINE"
+if __name__ == "__main__":
+    c = base64.b64decode("L77na/nrFsKvynd6HzOoG7GHTLXsTVu9qvY/2syLXzhPweyyMTJULu/6/kXX0KSvoOLSFQ==")
+    key = b"YELLOW SUBMARINE"
 
-decrypt = ctr(c, 0, key)
-encrypt = ctr(decrypt, 0, key)
+    decrypt = ctr(c, 0, key)
+    encrypt = ctr(decrypt, 0, key)
 
 
-print(c)
-print(decrypt)
-print(encrypt)
+    print(c)
+    print(decrypt)
+    print(encrypt)
