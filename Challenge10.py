@@ -45,14 +45,14 @@ def decrypt_CBC(cipher, key, IV):
     return plain
 
 
+if __name__ == "__main__":
+    key = b"YELLOW SUBMARINE"
+    IV = b'\x00'*len(key)
+    plaintext = b"YELLOW"
 
-key = b"YELLOW SUBMARINE"
-IV = b'\x00'*len(key)
-plaintext = b"YELLOW"
-
-cipher  = encrypt_CBC(plaintext, key, IV)
-#print(decrypt_CBC(cipher, key, IV))
-#cipher = base64.b64decode(open("Text10.txt").read())
-#print(decrypt_CBC(cipher, key, IV))
+    cipher  = encrypt_CBC(plaintext, key, IV)
+    #print(decrypt_CBC(cipher, key, IV))
+    #cipher = base64.b64decode(open("Text10.txt").read())
+    #print(decrypt_CBC(cipher, key, IV))
    
     

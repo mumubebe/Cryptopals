@@ -31,10 +31,11 @@ def profile_for(user):
     
     string = ("email="+user+"&uid=10&role=user").encode()
     return encrypt(string)
-    
-key = os.urandom(16)
 
 
-user = profile_for('user@mail.com')
-decrypt = decrypt(user)
-print(routine(decrypt))
+
+if __name__ == "__main__":   
+    key = os.urandom(16)
+    user = profile_for('user@mail.com')
+    decrypt = decrypt(user)
+    print(routine(decrypt))

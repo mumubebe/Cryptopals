@@ -47,7 +47,9 @@ def padding_oracle_attack(c, oracle):
     return plain
 c = encr()
 
-print(padding_oracle_attack(c, padding_oracle))
+
+if __name__ == "__main__":
+    print(padding_oracle_attack(c, padding_oracle))
 
 
 

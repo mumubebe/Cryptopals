@@ -36,10 +36,10 @@ def encrypt(plain, key):
         return Challenge10.encrypt_CBC(plain, key, os.urandom(16))
 
 
-
-plaintext = b'a'*43
-e = oracle(plaintext)
-if(e[16:32]==e[32:48]):
-    print("ECB!")
-else:
-    print("CBC!")
+if __name__ == "__main__":
+    plaintext = b'a'*43
+    e = oracle(plaintext)
+    if(e[16:32]==e[32:48]):
+        print("ECB!")
+    else:
+        print("CBC!")
