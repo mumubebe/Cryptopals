@@ -28,6 +28,9 @@ freqs = {
     ' ': 0.1918182 
 }
 
+
+
+
 def byteToBin(byte):
     return ''.join(bin(b)[2:].zfill(8) for b in byte)
 
@@ -47,7 +50,8 @@ def score(b):
         if i in freqs:
             score += freqs[i]
     return score
-        
+
+    
 
 def getSingleCharByteList(n):
     return [list(i)*(int(n)) for i in itertools.product(["0", "1"], repeat=8)]
