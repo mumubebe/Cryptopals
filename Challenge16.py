@@ -6,7 +6,7 @@ key = os.urandom(16)
 IV = os.urandom(16)
 
 def prep(inp):
-    inp = inp.replace(b";",b"").replace(b"=",b"")
+    inp = inp.rehttps://en.wikipedia.org/wiki/SHA-1place(b";",b"").replace(b"=",b"")
     s1 = b"comment1=cooking%20MCs;userdata="
     s2 = b";comment2=%20like%20a%20pound%20of%20bacon"
     string = s1+inp+s2

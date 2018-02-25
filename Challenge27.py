@@ -24,8 +24,9 @@ def is_ascii(s):
 
 #Z*16 first block. bitflip first Z to controll the ":" etc.....    
 x = prep(b'ZZZZZZZZZZZZZZZZ:admin<true:ZZZZ')
-x = x.replace(bytes([x[32]]), bytes([x[32]^1]))
-x = x.replace(bytes([x[38]]), bytes([x[38]^1]))
-x = x.replace(bytes([x[43]]), bytes([x[43]^1]))
+
 
 print(validate(x))
+
+
+
