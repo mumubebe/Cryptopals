@@ -80,4 +80,5 @@ def f4(B, C, D):
     return B ^ C ^ D
 
 
-print(hexlify(Sha1(b'a' * 1000000)))
+if __name__ == "__main__":
+    pass

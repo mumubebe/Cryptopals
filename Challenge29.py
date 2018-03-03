@@ -5,6 +5,7 @@ import os
 
 
 
+#SHA1 function takes message m in bytes
 def Sha1(message, h0 = 0x67452301, h1 = 0xEFCDAB89, h2 = 0x98BADCFE, h3 = 0x10325476, h4 = 0xC3D2E1F0, lengthinject = 0):
     # Message needs to be a multiple of 8 bits for this implementation to work
     length = len(message)

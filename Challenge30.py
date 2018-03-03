@@ -242,13 +242,8 @@ def reverse_mac(mac):
     a = Challenge29.bytes_to_int(pack('<L',a))
     b = Challenge29.bytes_to_int(pack('<L',b))
     c = Challenge29.bytes_to_int(pack('<L',c))
-    d = Challenge29.bytes_to_int(pack('<L',d))
-    
-    
+    d = Challenge29.bytes_to_int(pack('<L',d))  
     return [a, b, c, d]
-
-
-
 
 
 
