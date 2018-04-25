@@ -1,4 +1,4 @@
-import Methods, math, base64, operator, Challenge3
+import Methods, math, base64, operator, Challenge3, Challenge5
 
 
 #Calculate hamming_distance of two strings
@@ -27,19 +27,27 @@ def find_keysize(cipher, guess_from, guess_to):
         
         distances.update({keysize:normalized_distance})
         sorted_x = sorted(distances.items(), key=operator.itemgetter(1))
-    print(sorted_x)
+    return sorted_x
 
 def find_key(cipher, keysize):
+    #Chunk cipher
     chunks = []
     for i in range(keysize):
-        chunks.append(b''.join([cipher[k:k+3] for k in range(i, len(cipher), keysize)]))
-    print(chunks)   
+        chunks.append(b''.join([cipher[k:k+1] for k in range(i, len(cipher), keysize)]))
+    
+    #solve each chunk as singel byte xor
+    key = b''.join([Challenge3.find_single_byte_key(c) for c in chunks])
+    return key
+
+def break_vigenere(cipher, guess_from = 3, guess_to = 30):
+    guessed_keysize = find_keysize(cipher,guess_from ,guess_to)
+    key = find_key(cipher,guessed_keysize[0][0])
+    plain = Challenge5.repeating_xor(cipher, key)
+    return plain
 
 
 if __name__ == "__main__": 
     
     cipher = base64.b64decode(open("Text6.txt").read())
-    cipher = b"0123456789"
-    #find_keysize(cipher,2,40)
-    find_key(cipher, 3)
+    print(break_vigenere(cipher))
     
