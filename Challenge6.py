@@ -30,12 +30,16 @@ def find_keysize(cipher, guess_from, guess_to):
     print(sorted_x)
 
 def find_key(cipher, keysize):
-    chunks = [cipher[]]
-        
+    chunks = []
+    for i in range(keysize):
+        chunks.append(b''.join([cipher[k:k+3] for k in range(i, len(cipher), keysize)]))
+    print(chunks)   
 
 
 if __name__ == "__main__": 
     
     cipher = base64.b64decode(open("Text6.txt").read())
-    find_keysize(cipher,2,40)
+    cipher = b"0123456789"
+    #find_keysize(cipher,2,40)
+    find_key(cipher, 3)
     
