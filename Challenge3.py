@@ -41,8 +41,8 @@ def score(plain):
     return score
 
 def find_single_byte_key(cipher):
-    scores = [score(xor(cipher, bytes([i]*len(cipher)))) for i in range(255)]
-    return bytes([scores.index(max(scores))])
+    scores = [score(xor(cipher, bytes([i]*len(cipher)))) for i in range(1, 255)]
+    return bytes([scores.index(max(scores))+1])
         
 
 if __name__ == "__main__": 
