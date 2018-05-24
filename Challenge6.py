@@ -53,8 +53,7 @@ def break_vigenere(cipher, guess_from = 2, guess_to = 30):
 
 
 if __name__ == "__main__": 
-    cipher = b"alp gwcsepul gtavaf, nlv prgpbpsu mb h jcpbyvdlq, ipltga rv glniypfa we ekl 16xs nsjhlcb. px td o lccjdstslpahzn fptspf xstlxzi te iosj ezv sc xcns ttsoic lzlvrmhaw ez sjqijsa xsp rwhr. tq vxspf sciov, alp wsphvcv pr ess rwxpqlvp nwlvvc dyi dswbhvo ef htqtafvyw hqzfbpg, ezutewwm zcep xzmyr o scio ry tscoos rd woi pyqnmgelvr vpm . qbctnl xsp akbflowllmspwt nlwlpcg, lccjdstslpahzn fptspfo oip qvx dfgysgelipp ec bfvbxlrnj ojocjvpw, ld akfv ekhr zys hskehy my eva dclluxpih yoe mh yiacsoseehk fj l gebxwh sieesn we ekl iynfudktru. xsp yam zd woi qwoc."
-    print(Challenge5.repeating_xor(cipher, b"helloworld"))
-    #cipher = base64.b64decode(open("Text6.txt").read())
-    #print(break_vigenere(cipher))
+   
+    cipher = base64.b64decode(open("Text6.txt").read())
+    print(break_vigenere(cipher))
     
